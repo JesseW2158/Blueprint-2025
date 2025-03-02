@@ -1,0 +1,30 @@
+const int RED_PIN = 2;    // Red LED cathode on PWM pin 9
+const int GREEN_PIN = 3; // Green LED cathode on PWM pin 10
+const int BLUE_PIN = 4;  // Blue LED cathode on PWM pin 11 (not used)
+
+void setup() {
+  pinMode(RED_PIN, OUTPUT);
+  pinMode(GREEN_PIN, OUTPUT);
+  pinMode(BLUE_PIN, OUTPUT);
+
+  // Start with the LED off
+  digitalWrite(RED_PIN, LOW);
+  digitalWrite(GREEN_PIN, LOW);
+  digitalWrite(BLUE_PIN, LOW);
+}
+
+void loop() {
+  // Step 1: Turn the LED green
+  digitalWrite(RED_PIN, LOW);
+  digitalWrite(GREEN_PIN, HIGH);
+  digitalWrite(BLUE_PIN, LOW);
+  delay(2000);  // Hold green for 2 seconds
+
+  // Step 2: Turn the LED red
+  digitalWrite(RED_PIN, HIGH);
+  digitalWrite(GREEN_PIN, LOW);
+  digitalWrite(BLUE_PIN, LOW);
+  delay(2000);  // Hold red for 2 seconds
+
+  // Repeat indefinitely
+}
